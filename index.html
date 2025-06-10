@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kings Creation - Professional Graphics Design Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#f59e0b',
+                        accent: '#10b981',
+                        dark: '#0f172a',
+                        navy: '#1e40af',
+                        orange: '#f59e0b',
+                        'gray-950': '#020617'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-left': 'fadeInLeft 1s ease-out',
+                        'fade-in-right': 'fadeInRight 1s ease-out',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'shimmer': 'shimmer 2s infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'rotate-slow': 'rotate 20s linear infinite',
+                        'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+                        'slide': 'slide 15s linear infinite'
+                    }
+                }
+            }
+        }
+    </script>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white dark:bg-gray-950 transition-all duration-500 font-sans">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glass-effect transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3 animate-fade-in-left">
+                    <!-- KCA Logo with Crown -->
+                    <div class="w-12 h-12 relative">
+                        <svg viewBox="0 0 120 120" class="w-full h-full">
+                            <!-- Crown -->
+                            <path d="M30 35 L35 20 L45 30 L55 15 L65 30 L75 20 L80 35 L30 35" fill="#f59e0b"/>
+                            <circle cx="40" cy="18" r="3" fill="#f59e0b"/>
+                            <circle cx="55" cy="13" r="3" fill="#f59e0b"/>
+                            <circle cx="70" cy="18" r="3" fill="#f59e0b"/>
+                            <!-- Letters -->
+                            <text x="20" y="70" font-family="Arial Black" font-size="28" font-weight="900" fill="#f59e0b">K</text>
+                            <text x="45" y="70" font-family="Arial Black" font-size="28" font-weight="900" fill="#1e3a8a">C</text>
+                            <text x="75" y="70" font-family="Arial Black" font-size="28" font-weight="900" fill="#10b981">A</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-white">Kings Creation</span>
+                        <div class="text-xs text-orange-200 font-medium">Professional Design Training</div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-orange transition-all duration-300 font-medium hover:scale-105">Home</a>
+                    <a href="#courses" class="text-white hover:text-orange transition-all duration-300 font-medium hover:scale-105">Courses</a>
+                    <a href="#about" class="text-white hover:text-orange transition-all duration-300 font-medium hover:scale-105">About</a>
+                    <a href="#contact" class="text-white hover:text-orange transition-all duration-300 font-medium hover:scale-105">Contact</a>
+                    <button onclick="enrollNow()" class="bg-gradient-to-r from-orange to-yellow-500 text-navy px-6 py-2 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:scale-110 transition-transform">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-white hover:text-orange transition-colors font-medium">Home</a>
+                    <a href="#courses" class="text-white hover:text-orange transition-colors font-medium">Courses</a>
+                    <a href="#about" class="text-white hover:text-orange transition-colors font-medium">About</a>
+                    <a href="#contact" class="text-white hover:text-orange transition-colors font-medium">Contact</a>
+                    <button onclick="enrollNow()" class="bg-gradient-to-r from-orange to-yellow-500 text-navy px-6 py-3 rounded-lg font-semibold w-full">
+                        Enroll Now
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 min-h-screen flex items-center bg-navy-gradient relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-4 -right-4 w-72 h-72 bg-orange opacity-10 rounded-full animate-float"></div>
+            <div class="absolute top-1/2 -left-8 w-48 h-48 bg-yellow-500 opacity-10 rounded-full animate-bounce-slow"></div>
+            <div class="absolute bottom-10 right-1/4 w-32 h-32 bg-accent opacity-10 rounded-full animate-ping-slow"></div>
+        </div>
+
+        <div class="container mx-auto px-6 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-fade-in-up">
+                    <div class="inline-block bg-gradient-to-r from-orange to-yellow-500 text-navy px-4 py-2 rounded-full text-sm font-semibold mb-6 animate-shimmer">
+                        🚀 Professional Design Training 2025
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-black mb-6 text-shadow leading-tight text-white">
+                        <span class="gradient-text">GRAPHICS DESIGN</span><br>
+                        <span class="text-white">MASTERY</span><br>
+                        <span class="text-3xl lg:text-4xl font-bold text-orange">Program 2025</span>
+                    </h1>
+                    
+                    <p class="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed font-medium">
+                        <strong>GRAPHICS DESIGN as a catalyst for Trade and Investment in Digital World</strong>
+                    </p>
+                    
+                    <p class="text-lg text-blue-200 mb-8 leading-relaxed">
+                        Connecting Digital Creators & GRAPHICS industry leaders to drive economic growth through strategic meetings, incentives, conferences and exhibitions.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <button onclick="enrollNow()" class="group relative bg-gradient-to-r from-orange to-yellow-500 text-navy px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                            <span class="relative z-10 flex items-center justify-center">
+                                <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                                Enroll Now - 1500 KSH
+                            </span>
+                        </button>
+                        <button onclick="scrollToSection('courses')" class="border-2 border-orange text-orange px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange hover:text-navy transition-all duration-300 hover:scale-105">
+                            View Program
+                        </button>
+                    </div>
+
+                    <div class="flex items-center space-x-8 text-sm text-blue-200">
+                        <div class="flex items-center group">
+                            <div class="w-10 h-10 bg-gradient-to-r from-orange to-yellow-500 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-calendar text-navy"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white">Jan-Dec</div>
+                                <div>2025 Program</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center group">
+                            <div class="w-10 h-10 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white">Online</div>
+                                <div>Kigali, Rwanda</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative animate-fade-in-right">
+                    <!-- Course Poster Section -->
+                    <div class="poster-container bg-gradient-to-br from-blue-600 to-purple-800 p-8 text-center text-white">
+                        <div class="mb-6">
+                            <!-- KCA Logo Large -->
+                            <div class="w-24 h-24 mx-auto mb-4">
+                                <svg viewBox="0 0 120 120" class="w-full h-full">
+                                    <!-- Crown -->
+                                    <path d="M30 35 L35 20 L45 30 L55 15 L65 30 L75 20 L80 35 L30 35" fill="#f59e0b"/>
+                                    <circle cx="40" cy="18" r="3" fill="#f59e0b"/>
+                                    <circle cx="55" cy="13" r="3" fill="#f59e0b"/>
+                                    <circle cx="70" cy="18" r="3" fill="#f59e0b"/>
+                                    <!-- Letters -->
+                                    <text x="20" y="70" font-family="Arial Black" font-size="28" font-weight="900" fill="#f59e0b">K</text>
+                                    <text x="45" y="70" font-family="Arial Black" font-size="28" font-weight="900" fill="#60a5fa">C</text>
+                                    <text x="75" y="70" font-family="Arial Black" font-size="28" font-weight="900" fill="#10b981">A</text>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <h2 class="text-4xl font-black mb-4">WELCOME TO THE</h2>
+                        <h1 class="text-5xl font-black mb-2">2025 Graphics</h1>
+                        <h1 class="text-5xl font-black text-orange mb-6">DESIGN Training</h1>
+                        
+                        <div class="text-xl mb-6">
+                            <strong>THEME:</strong> GRAPHICS as a catalyst for Trade and Investment in Digital
+                        </div>
+                        
+                        <div class="flex items-center justify-center text-2xl font-bold mb-8">
+                            <i class="fas fa-calendar mr-2 text-orange"></i>
+                            JAN-DEC 2025
+                            <i class="fas fa-map-marker-alt ml-4 mr-2 text-orange"></i>
+                            KIGALI, RWANDA
+                        </div>
+                        
+                        <div class="text-lg mb-6 opacity-90">IN PARTNERSHIP WITH</div>
+                        
+                        <!-- Partner Logos Simulation -->
+                        <div class="flex justify-center items-center space-x-4 mb-6">
+                            <div class="bg-white/20 px-4 py-2 rounded text-sm font-bold">ADOBE</div>
+                            <div class="bg-white/20 px-4 py-2 rounded text-sm font-bold">CANVA</div>
+                            <div class="bg-orange/20 px-4 py-2 rounded text-sm font-bold">FIGMA</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Floating Elements -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-orange rounded-full animate-bounce-slow opacity-20"></div>
+                    <div class="absolute -bottom-8 -left-8 w-20 h-20 bg-accent rounded-full animate-pulse-slow opacity-30"></div>
+                    <div class="absolute top-1/2 -right-4 w-16 h-16 bg-yellow-500 rounded-full animate-ping-slow opacity-25"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-24 bg-gray-50 dark:bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 animate-on-scroll">
+                <div class="inline-block bg-gradient-to-r from-orange to-yellow-500 text-navy px-6 py-2 rounded-full text-sm font-bold mb-6">
+                    📚 COMPREHENSIVE CURRICULUM
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-black text-gray-800 dark:text-white mb-6 text-shadow">
+                    What You'll <span class="gradient-text">Master</span>
+                </h2>
+                <p class="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto font-medium leading-relaxed">
+                    Our cutting-edge curriculum is designed to transform you into a skilled graphics designer with industry-standard tools and techniques
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Photoshop Course -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl hover-lift modern-shadow group animate-on-scroll">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mb-8 group-hover:animate-pulse">
+                        <i class="fab fa-adobe text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-4">Adobe Photoshop</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 text-lg">Master the world's leading photo editing and digital art creation software.</p>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Advanced photo editing & retouching</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Professional flyer & poster design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Digital art & creative manipulation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Layer masking & compositing</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Illustrator Course -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl hover-lift modern-shadow group animate-on-scroll">
+                    <div class="w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-8 group-hover:animate-pulse">
+                        <i class="fab fa-adobe text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-4">Adobe Illustrator</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 text-lg">Create scalable vector graphics, logos, and professional illustrations.</p>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Vector graphics mastery</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Professional logo design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Typography & branding</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Print-ready design creation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Canva Course -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl hover-lift modern-shadow group animate-on-scroll">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:animate-pulse">
+                        <i class="fas fa-palette text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-4">Canva Pro</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 text-lg">Rapid design creation for social media, marketing, and presentations.</p>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Social media graphics mastery</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Presentation design excellence</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Brand template creation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">Animation & video basics</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Section -->
+    <section class="py-24 bg-navy-gradient relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block bg-gradient-to-r from-orange to-yellow-500 text-navy px-6 py-2 rounded-full text-sm font-bold mb-6">
+                    🎨 PROFESSIONAL PORTFOLIO SHOWCASE
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-black text-white mb-6 text-shadow">
+                    Our Training <span class="gradient-text">Results</span>
+                </h2>
+                <p class="text-xl text-blue-100 max-w-4xl mx-auto">
+                    See the professional-quality designs our students create during training. These real projects demonstrate the practical skills and creative excellence you'll achieve in our comprehensive program.
+                </p>
+            </div>
+
+            <!-- Portfolio Grid - Image Containers -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Portfolio Item 1 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift">
+                    <div class="h-80 bg-gray-100 flex items-center justify-center">
+                        <!-- Replace this div with your image -->
+                        <img src="your-image-1.jpg" alt="Portfolio Design 1" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift">
+                    <div class="h-80 bg-gray-100 flex items-center justify-center">
+                        <!-- Replace this div with your image -->
+                        <img src="your-image-2.jpg" alt="Portfolio Design 2" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift">
+                    <div class="h-80 bg-gray-100 flex items-center justify-center">
+                        <!-- Replace this div with your image -->
+                        <img src="your-image-3.jpg" alt="Portfolio Design 3" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift">
+                    <div class="h-80 bg-gray-100 flex items-center justify-center">
+                        <!-- Replace this div with your image -->
+                        <img src="your-image-4.jpg" alt="Portfolio Design 4" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift">
+                    <div class="h-80 bg-gray-100 flex items-center justify-center">
+                        <!-- Replace this div with your image -->
+                        <img src="your-image-5.jpg" alt="Portfolio Design 5" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift">
+                    <div class="h-80 bg-gray-100 flex items-center justify-center">
+                        <!-- Replace this div with your image -->
+                        <img src="your-image-6.jpg" alt="Portfolio Design 6" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Stats -->
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+                    <div class="text-3xl font-black text-white mb-2">50+</div>
+                    <div class="text-blue-100 font-medium">Student Projects</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+                    <div class="text-3xl font-black text-white mb-2">15+</div>
+                    <div class="text-blue-100 font-medium">Design Categories</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+                    <div class="text-3xl font-black text-white mb-2">100%</div>
+                    <div class="text-blue-100 font-medium">Portfolio Ready</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+                    <div class="text-3xl font-black text-white mb-2">Pro</div>
+                    <div class="text-blue-100 font-medium">Quality Standards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-orange via-yellow-500 to-orange relative overflow-hidden">
+        <div class="absolute inset-0 bg-navy/20"></div>
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/10 rounded-full animate-bounce-slow"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-12 animate-fade-in-up">
+                    <h2 class="text-5xl lg:text-6xl font-black text-navy mb-6 text-shadow">
+                        Launch Your Design Career Today
+                    </h2>
+                    <p class="text-xl lg:text-2xl text-navy/80 font-medium leading-relaxed">
+                        Join the next generation of professional designers and start creating stunning visuals that captivate audiences worldwide
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl mb-12 max-w-lg mx-auto hover-lift modern-shadow animate-scale-in">
+                    <div class="mb-8">
+                        <div class="text-6xl font-black text-navy mb-2">1500</div>
+                        <div class="text-2xl text-gray-600">KSH - Complete Course</div>
+                        <div class="inline-block bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm font-bold mt-3">
+                            🔥 Limited Time Offer
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-3xl font-black text-navy mb-6">Everything You Need</h3>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center text-left">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium text-gray-700">Photoshop Mastery</span>
+                        </div>
+                        <div class="flex items-center text-left">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium text-gray-700">Illustrator Pro</span>
+                        </div>
+                        <div class="flex items-center text-left">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium text-gray-700">Canva Expertise</span>
+                        </div>
+                        <div class="flex items-center text-left">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium text-gray-700">Real Projects</span>
+                        </div>
+                        <div class="flex items-center text-left">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium text-gray-700">Portfolio Build</span>
+                        </div>
+                        <div class="flex items-center text-left">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium text-gray-700">Lifetime Support</span>
+                        </div>
+                    </div>
+                    
+                    <button onclick="enrollNow()" class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-5 rounded-xl font-black text-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 mb-4 relative overflow-hidden group">
+                        <span class="relative z-10 flex items-center justify-center">
+                            <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                            Enroll via WhatsApp Now
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </button>
+                    
+                    <div class="flex items-center justify-center space-x-4 text-sm text-gray-500">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt mr-2 text-green-500"></i>
+                            Money-back guarantee
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock mr-2 text-blue-500"></i>
+                            Start immediately
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white dark:bg-gray-950">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-fade-in-left">
+                    <div class="inline-block bg-gradient-to-r from-orange to-yellow-500 text-navy px-6 py-2 rounded-full text-sm font-bold mb-6">
+                        🎯 WHY CHOOSE US
+                    </div>
+                    <h2 class="text-5xl lg:text-6xl font-black text-gray-800 dark:text-white mb-6 text-shadow">
+                        Your Success is <span class="gradient-text">Our Mission</span>
+                    </h2>
+                    <p class="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed font-medium">
+                        We're committed to delivering world-class design education that transforms aspiring creatives into industry-ready professionals.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-6 group">
+                            <div class="w-16 h-16 bg-gradient-to-r from-primary to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-graduation-cap text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-3">Expert-Led Training</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">Learn from industry veterans with proven track records in professional design and real-world project experience.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-6 group">
+                            <div class="w-16 h-16 bg-gradient-to-r from-orange to-yellow-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-laptop-code text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-3">Hands-On Projects</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">Build an impressive portfolio with real-world projects that showcase your skills to potential clients and employers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-6 group">
+                            <div class="w-16 h-16 bg-gradient-to-r from-accent to-teal-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-users text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-3">Thriving Community</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">Connect with fellow designers, share your work, get feedback, and build lasting professional relationships.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative animate-fade-in-right">
+                    <div class="bg-navy-gradient rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        <div class="relative z-10">
+                            <div class="grid grid-cols-2 gap-8 mb-10">
+                                <div class="text-center">
+                                    <div class="text-4xl font-black mb-2">500+</div>
+                                    <div class="text-blue-100 font-medium">Students Trained</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl font-black mb-2">98%</div>
+                                    <div class="text-blue-100 font-medium">Success Rate</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl font-black mb-2">24/7</div>
+                                    <div class="text-blue-100 font-medium">Support Available</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl font-black mb-2">100%</div>
+                                    <div class="text-blue-100 font-medium">Practical Learning</div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <h3 class="text-2xl font-black mb-4">Ready to Start?</h3>
+                                <button onclick="enrollNow()" class="bg-orange text-navy px-8 py-4 rounded-xl font-black text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                                    Join Our Community
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Decorative elements -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full animate-float"></div>
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-white/10 rounded-full animate-pulse-slow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="mb-16 animate-on-scroll">
+                <div class="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-6">
+                    💬 GET STARTED TODAY
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-black text-gray-800 dark:text-white mb-6 text-shadow">
+                    Ready to <span class="gradient-text">Transform</span> Your Future?
+                </h2>
+                <p class="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl mx-auto font-medium leading-relaxed">
+                    Take the first step towards becoming a professional graphics designer. Contact us now and start your creative journey today.
+                </p>
+            </div>
+            
+            <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl modern-shadow hover-lift animate-scale-in">
+                <div class="mb-8">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+                        <i class="fab fa-whatsapp text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-gray-800 dark:text-white mb-4">WhatsApp Enrollment</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-lg font-medium">Quick, secure, and personal registration process</p>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="text-4xl font-black text-gray-800 dark:text-white mb-2">
+                        +254 788 419 041
+                    </div>
+                    <div class="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold">
+                        🟢 Online Now - Quick Response
+                    </div>
+                </div>
+                
+                <button onclick="enrollNow()" class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-5 rounded-xl font-black text-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 mb-6 relative overflow-hidden group">
+                    <span class="relative z-10 flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-3 text-2xl animate-bounce"></i>
+                        Start Your Journey Now
+                    </span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+                
+                <div class="grid grid-cols-2 gap-4 text-sm text-gray-500 dark:text-gray-400">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-clock mr-2 text-blue-500"></i>
+                        Available 24/7
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-shield-alt mr-2 text-green-500"></i>
+                        Secure Process
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-rocket mr-2 text-purple-500"></i>
+                        Instant Start
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-headset mr-2 text-orange-500"></i>
+                        Full Support
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-8">
+                    <div class="w-16 h-16 relative">
+                        <svg viewBox="0 0 120 120" class="w-full h-full">
+                            <!-- Crown -->
+                            <path d="M30 35 L35 20 L45 30 L55 15 L65 30 L75 20 L80 35 L30 35" fill="#f59e0b"/>
+                            <circle cx="40" cy="18" r="3" fill="#f59e0b"/>
+                            <circle cx="55" cy="13" r="3" fill="#f59e0b"/>
+                            <circle cx="70" cy="18" r="3" fill="#f59e0b"/>
+                            <!-- Letters -->
+                            <text x="20" y="70" font-family="Arial Black" font-size="28" font-weight="900" fill="#f59e0b">K</text>
+                            <text x="45" y="70" font-family="Arial Black" font-size="28" font-weight="900" fill="#60a5fa">C</text>
+                            <text x="75" y="70" font-family="Arial Black" font-size="28" font-weight="900" fill="#10b981">A</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-4xl font-black">Kings Creation</span>
+                        <div class="text-sm text-gray-400 font-medium">Professional Design Training</div>
+                    </div>
+                </div>
+                
+                <p class="text-gray-400 text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
+                    Empowering the next generation of creative professionals through world-class graphics design education. Your success story starts here.
+                </p>
+                
+                <div class="flex justify-center space-x-6 mb-10">
+                    <a href="#" class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-blue-400 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/254788419041" class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-500 text-lg font-medium">
+                        © 2025 Kings Creation Academy. All rights reserved. | Transforming Creative Minds Worldwide
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
